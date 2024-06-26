@@ -63,9 +63,9 @@ def comandos (circles):
 
     for i in range(len(circles)):
         pos, name = circles[i]
-        pygame.draw.circle(tela, (255, 255, 255), pos, 5)
+        pygame.draw.circle(tela, (branco), pos, 5)
         font = pygame.font.Font(None, 20)
-        name_text = font.render(name, True, (255, 255, 255))
+        name_text = font.render(name, True, (branco))
         tela.blit(name_text, (pos[0], pos[1] + 10))
 
         if i > 0:
@@ -77,7 +77,7 @@ def comandos (circles):
             end_pos = circles[i + 1][0]
             linha(start_pos, end_pos)
             line_distance = pygame.math.Vector2(end_pos).distance_to(start_pos)
-            line_text = font.render(f"DISTÂNCIA: {line_distance:.2f}", True, (255, 255, 255))
+            line_text = font.render(f"DISTÂNCIA: {line_distance:.2f}", True, (branco))
             line_pos = (start_pos[0] + (end_pos[0] - start_pos[0]) // 2,
                         start_pos[1] + (end_pos[1] - start_pos[1]) // 2)
             tela.blit(line_text, line_pos)
